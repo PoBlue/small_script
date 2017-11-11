@@ -35,7 +35,7 @@ def quiz_2():
 """
 quiz 3 in page 126: Handle Cookie with session
 """
-def quiz3():
+def quiz_3():
     session = requests.Session()
     params = {'username':'witcher', 'password': 'password'}
 
@@ -62,7 +62,7 @@ PhantomJS in Linux: https://stackoverflow.com/questions/8778513/how-can-i-setup-
 """
 from selenium import webdriver
 import time
-def quiz4():
+def quiz_4():
     url = "http://pythonscraping.com/pages/javascript/ajaxDemo.html"
     path_to_this_project = "/Users/moweiquan/Desktop/mo_document/program/"
     path_to_phantomJS = "small_script/web-scraping-with-python/phantomjs-2.1.1-macosx/bin/phantomjs"
@@ -87,7 +87,7 @@ Accept-Encoding: gzip, deflate, sdch | describe what type of encoding to respone
 Accept-Language: en-US;              | describe which language of content should be responed
 """
 from bs4 import BeautifulSoup
-def quiz5():
+def quiz_5():
     session = requests.Session()
 
     headers = {
@@ -114,12 +114,15 @@ def quiz_6():
     url = "http://pythonscraping.com"
     driver.get(url)
     driver.implicitly_wait(1)
-    print(driver.get_cookie())
+    print(driver.get_cookies())
 
-quiz_6()
 
 """
 quiz 7 in page 158: save cookie for later use with PhantomJS
+
+issue: set cookie, solve by: https://stackoverflow.com/a/37578697
+or with execute_script: https://stackoverflow.com/a/37105419
+or this issues to modify the source code: https://github.com/ariya/phantomjs/issues/13115
 """
 def quiz_7():
     path_to_this_project = "/Users/moweiquan/Desktop/mo_document/program/"
@@ -129,15 +132,31 @@ def quiz_7():
     url = "http://pythonscraping.com"
     driver.get(url)
     driver.implicitly_wait(1)
-    print(driver.get_cookie())
+    print(driver.get_cookies())
 
     savedCookies = driver.get_cookies()
     driver2 = webdriver.PhantomJS(executable_path=path_to_this_project+path_to_phantomJS)
     driver2.get(url)
     driver2.delete_all_cookies()
-    for cookie in savedCookies:
-        driver2.add_cookie(cookie)
+
+    ##First way: it is not work properly, Error: can not set
+    # for cookie in savedCookies:
+    #     # driver2.add_cookie(cookie)
+    #     driver2.add_cookie({k: cookie[k] for k in ('name', 'value',  'path', 'expiry') if k in cookie})
     
+    # second way to set cookies, just for value and name
+    for cookie in savedCookies:
+        print(cookie)
+        driver2.add_cookie({
+            'domain': '.pythonscraping.com',  # note the dot at the beginning
+            'name': cookie['name'],
+            'value': cookie['value'],
+            'path': '/',
+            'expires': None
+        })
+
     driver2.get(url)
     driver.implicitly_wait(1)
     print(driver2.get_cookies())
+
+quiz_7()
