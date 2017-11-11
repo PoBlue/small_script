@@ -50,4 +50,27 @@ def quiz3():
     s = session.get(welcome_page)
     print(s.text)
 
-quiz3()
+
+"""
+url of quiz is: http://pythonscraping.com/pages/javascript/ajaxDemo.html
+quiz 4 in page 132: Handle JS and AJAX
+
+install selenium: https://pypi.python.org/pypi/selenium
+install PhantomJS: https://github.com/ariya/phantomjs
+PhantomJS in mac: https://ariya.io/2012/02/phantomjs-and-mac-os-x
+PhantomJS in Linux: https://stackoverflow.com/questions/8778513/how-can-i-setup-run-phantomjs-on-ubuntu
+"""
+from selenium import webdriver
+import time
+def quiz4():
+    url = "http://pythonscraping.com/pages/javascript/ajaxDemo.html"
+    path_to_this_project = "/Users/moweiquan/Desktop/mo_document/program/"
+    path_to_phantomJS = "small_script/web-scraping-with-python/phantomjs-2.1.1-macosx/bin/phantomjs"
+    driver = webdriver.PhantomJS(executable_path= path_to_this_project + path_to_phantomJS)
+    driver.get(url)
+
+    time.sleep(3)
+    print(driver.find_element_by_id('content').text)
+    driver.close()
+    
+quiz4()
