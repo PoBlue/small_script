@@ -281,6 +281,7 @@
 > 下面都是成熟，典型，正式的四人组模式，只不过没有前面的模式那么经常地被使用。
 
 > 书中也是作为附录的形式记录的，就直接引用 wiki 了
+
 - [Bridge Pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
 - [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern)
 - [Chain-of-responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
