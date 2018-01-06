@@ -9,7 +9,7 @@
 ## Table of Contents
 =================
    * [Head First Design Pattern](#head-first-design-pattern)
-      * [OO原则](#OO原则)
+      * [OO原则](#oo原则)
       * [策略模式](#策略模式)
       * [观察者模式](#观察者模式)
       * [装饰者模式](#装饰者模式)
