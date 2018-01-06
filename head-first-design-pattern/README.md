@@ -212,3 +212,37 @@
 
 ### 第 461 页的例子
 ![p461](./head-first-pratice-p461.png)
+
+
+## 模式
+
+### 说明
+- 在某情景 (context) 下，针对某问题的某种解决方案
+- 一个模式是解决一个经常重复发生的设计问题
+
+### 用模式思考
+- KISS 原则， 保持简单（keep it simple, stupid），尽可能用最简单的方式解决问题
+- 何时需要模式，加入模式是要应对可能发生的 `实际改变`, 而不是 `假想的改变`
+- 重构的时间就是模式的时间
+- 如果现在不需要，就别做。如果只是 `假想的改变`, 就不要添加这个模式, 因为这只会增加系统的复杂度
+
+## 反模式
+
+### 说明
+- 告诉你如何采用一个不好的解决方案解决一个问题
+- 不但要了解正例，也要了解一下反例嘛
+- 这里有更多反模式的讨论：[wiki](http://c2.com)
+
+## 剩下的模式
+> 下面都是成熟，典型，正式的四人组模式，只不过没有前面的模式那么经常地被使用。
+
+> 书中也是作为附录的形式记录的，就直接引用 wiki 了
+- [Bridge Pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
+- [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern)
+- [Chain-of-responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
+- [Flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
+- [Interpreter pattern](https://en.wikipedia.org/wiki/Interpreter_pattern)
+- [Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
+- [Memento pattern](https://en.wikipedia.org/wiki/Memento_pattern)
+- [Prototype pattern](https://en.wikipedia.org/wiki/Prototype_pattern)
+- [Visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)
