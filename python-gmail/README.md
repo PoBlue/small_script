@@ -1,4 +1,4 @@
-# Python Gmail
+# Python mail
 
 Send mail with Python
 
