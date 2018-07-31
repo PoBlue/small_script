@@ -1,0 +1,31 @@
+.grid {
+  height: 400px;
+  width: 400px;
+  background-color: grey;
+  display: grid;
+  grid-template-columns: 1fr 130px 1fr;
+  grid-template-rows: 160px repeat(3, 1fr) 20px;
+}
+
+.box1 {
+  background-color: yellowgreen;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  order: 2;
+  margin: 10px;
+}
+
+.box2 {
+  background-color: royalblue;
+  grid-column: 1 / -1;
+  grid-row: 1 / -2;
+  margin: 40px;
+  margin-bottom: 0;
+}
+
+.box3 {
+  background-color: rebeccapurple;
+  grid-column: 2 / -2;
+  grid-row: 2 / -2;
+  order: 2;
+}
